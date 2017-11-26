@@ -1,8 +1,8 @@
-app.factory("greenspadefactory", function ($https, $q) {
+app.factory("greenspadefactory", function ($http, $q) {
     var object = {
         getList: function(){
             var pr = $q.defer();
-            $https({
+            $http({
 
                url: "http://35.154.241.44:5555/api/v1/gspade/data",
                 method: "get"
