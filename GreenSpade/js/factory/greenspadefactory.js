@@ -2,11 +2,9 @@ app.factory("greenspadefactory", function ($http, $q) {
     var object = {
         getList: function(){
             var pr = $q.defer();
-            $http({
+            $http.get('http://35.154.241.44:5555/api/v1/gspade/data')
 
-               url: "http://35.154.241.44:5555/api/v1/gspade/data",
-                method: "get"
-            }).then(function (data) {
+            .then(function (data) {
                 pr.resolve(data);
             },function(er){
                 console.log(er);
